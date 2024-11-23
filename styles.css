@@ -1,5 +1,5 @@
 body {
-    font-family: 'Arial', sans-serif;
+    font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
     background-color: #f8f9fa;
@@ -11,11 +11,21 @@ body {
     text-align: center;
 }
 
+.card {
+    background-color: #ffffff;
+    border: 1px solid #dee2e6;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    width: 90%;
+    max-width: 600px;
+    margin: 20px;
+}
+
 h1 {
-    font-size: 2.5rem;
-    margin-bottom: 1rem;
-    color: #212529;
-    font-weight: 500;
+    font-size: 2rem;
+    margin-bottom: 20px;
+    color: #343a40;
 }
 
 #buttons {
@@ -23,16 +33,16 @@ h1 {
     flex-wrap: wrap;
     justify-content: center;
     gap: 10px;
-    margin-bottom: 1.5rem;
+    margin-bottom: 20px;
 }
 
 #buttons button {
-    margin: 0.5rem;
-    padding: 0.75rem 1.5rem;
-    font-size: 1rem;
+    margin: 5px;
+    padding: 10px 20px;
+    font-size: 16px;
     cursor: pointer;
-    border: 1px solid #ced4da;
-    border-radius: 0.25rem;
+    border: none;
+    border-radius: 5px;
     background-color: #e9ecef;
     color: #495057;
     transition: all 0.3s ease;
@@ -40,57 +50,50 @@ h1 {
 
 #buttons button:hover {
     background-color: #dee2e6;
-    color: #212529;
-}
-
-#buttons button.active {
-    background-color: #0d6efd;
-    color: white;
-    border-color: #0a58ca;
 }
 
 #generateFact {
     display: inline-block;
-    margin-top: 1.5rem;
-    padding: 0.75rem 2rem;
-    font-size: 1.125rem;
-    background-color: #0d6efd;
+    margin-top: 10px;
+    padding: 10px 30px;
+    font-size: 18px;
+    background-color: #28a745;
     color: white;
     border: none;
-    border-radius: 0.25rem;
+    border-radius: 5px;
     cursor: pointer;
     transition: all 0.3s ease;
 }
 
 #generateFact:hover {
-    background-color: #0a58ca;
+    background-color: #218838;
 }
 
 #factDisplay {
-    margin-top: 1rem;
-    padding: 1.5rem;
-    background-color: white;
-    border-radius: 0.375rem;
-    box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
-    font-size: 1.125rem;
-    color: #212529;
-    max-width: 600px;
-    width: 90%;
+    margin-top: 20px;
+    padding: 20px;
+    background-color: #f8f9fa;
+    border: 1px solid #dee2e6;
+    border-radius: 8px;
+    font-size: 20px;
+    color: #495057;
+    min-height: 50px;
+    text-align: center;
 }
 
 #learnMore {
-    margin-top: 2rem;
+    margin-top: 20px;
+    padding: 20px;
     background-color: #f8f9fa;
-    padding: 1.5rem;
-    border-radius: 0.375rem;
-    box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
+    border: 1px solid #dee2e6;
+    border-radius: 8px;
     text-align: center;
 }
 
 #learnMore h3 {
-    font-size: 1.25rem;
-    margin-bottom: 1rem;
-    color: #212529;
+    margin-bottom: 10px;
+    font-size: 1.2rem;
+    color: #343a40;
 }
 
 #learnMore ul {
@@ -100,15 +103,21 @@ h1 {
 }
 
 #learnMore ul li {
-    margin: 0.5rem 0;
+    margin: 5px 0;
 }
 
 #learnMore ul li a {
-    color: #0d6efd;
+    color: #007bff;
     text-decoration: none;
     transition: color 0.3s ease;
 }
 
 #learnMore ul li a:hover {
-    color: #0a58ca;
+    color: #0056b3;
+}
+
+button.active {
+    background-color: #28a745;
+    color: white;
+    border: 2px solid #1e7e34;
 }
