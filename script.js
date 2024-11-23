@@ -63,45 +63,27 @@ function fetchFunFact(category) {
         ]
     };
 
+    if (!facts[category]) return;
     const randomIndex = Math.floor(Math.random() * facts[category].length);
-    const fact = facts[category][randomIndex];
-    document.getElementById('factDisplay').innerText = fact;
+    document.getElementById('factDisplay').innerText = facts[category][randomIndex];
 }
 
 // Event listener for the main fact generation button
-document.getElementById('generateFact').addEventListener('click', function() {
-    showRandomFact();
+document.getElementById('generateFact').addEventListener('click', function () {
+    const activeButton = document.querySelector('#buttons .active');
+    if (activeButton) {
+        const category = activeButton.getAttribute('data-category');
+        fetchFunFact(category);
+    } else {
+        document.getElementById('factDisplay').innerText = "Please select a category!";
+    }
 });
 
 // Handling button interactions for category selection
 const buttons = document.querySelectorAll('#buttons button');
 buttons.forEach(button => {
-    button.addEventListener('click', function() {
+    button.addEventListener('click', function () {
         buttons.forEach(btn => btn.classList.remove('active'));
         button.classList.add('active');
-        fetchFunFact(button.getAttribute('data-category'));
     });
 });
-
-// Space facts array
-const spaceFacts = [
-    "Space is Completely Silent: Unlike Earth, space has no atmosphere, which means sound has no medium or way to travel to be heard.",
-    "The Hottest Planet is Not the Closest to the Sun: Venus is the hottest planet in our solar system with surface temperatures over 450 degrees Celsius, even though Mercury is closer to the Sun.",
-    "A Day on Venus is Longer Than a Year: Venus has an extremely slow rotation on its axis, taking about 243 Earth days to complete one rotation, while it takes only about 225 Earth days to orbit the Sun.",
-    "There are More Stars in the Universe Than Grains of Sand on Earth: The universe is vast, with billions of galaxies, each containing millions or billions of stars.",
-    "Neutron Stars Can Spin at a Rate of 600 Rotations Per Second: These incredibly dense remnants of supernova explosions can rotate extremely rapidly.",
-    "There May Be a Planet Made of Diamonds: 55 Cancri e, a planet twice the size of Earth, is thought to have a surface made largely of diamond.",
-    "The Largest Known Volcano is on Mars: Olympus Mons is about 13.6 miles high, making it nearly three times the height of Mount Everest.",
-    "Space is Not Far Away: The Kármán line, which is the boundary of space, is only 100 kilometers (62 miles) above sea level.",
-    "The Moon is Moving Away from Earth: Each year, the Moon drifts about 3.8 centimeters further away from our planet.",
-    "A Year on Mercury is Just 88 Days Long: Due to its proximity to the Sun, Mercury has a very short orbital period."
-];
-
-// Function to show a random space fact
-function showRandomFact() {
-    const randomIndex = Math.floor(Math.random() * spaceFacts.length);
-    document.getElementById('factDisplay').innerText = spaceFacts[randomIndex];
-}
-
-// Optionally, show a random fact when the page loads
-showRandomFact();
