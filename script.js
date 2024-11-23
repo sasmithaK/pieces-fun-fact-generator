@@ -1,4 +1,6 @@
+// Function to fetch a random fun fact based on a given category
 function fetchFunFact(category) {
+    // Object containing arrays of fun facts categorized by topics
     const facts = {
         science: [
             "The human body contains around 37.2 trillion cells.",
@@ -62,7 +64,10 @@ function fetchFunFact(category) {
         ]
     };
 
+    // Generate a random index based on the number of facts in the selected category
     const randomIndex = Math.floor(Math.random() * facts[category].length);
+    // Select a random fact from the category
     const fact = facts[category][randomIndex];
+    // Display the selected fact in the HTML element with id 'factDisplay'
     document.getElementById('factDisplay').innerText = fact;
 }
